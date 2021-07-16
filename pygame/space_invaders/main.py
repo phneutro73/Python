@@ -1,4 +1,4 @@
-roberto.peralta@gmail.comimport pygame
+import pygame
 
 pygame.init()
 
