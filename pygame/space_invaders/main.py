@@ -85,6 +85,8 @@ while running:
 
     pygame.display.update()
 
+#Fin del juego
+
 
 
 
