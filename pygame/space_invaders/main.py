@@ -35,6 +35,18 @@ enemyY_change = 5
 def enemy(x,y):
     screen.blit(enemyImg, (x, y))
 
+# Bala (Ready: la bala no se muestra. Fire: la bala se muestra en pantalla y se mueve)
+bulletImg = pygame.image.load("./images/bullet.png")
+bulletX = playerX
+bulletY = 480
+bulletX_change = 0
+bulletY_change = 10
+bullet_state =  "ready"
+
+def fire_bullet(x,y):
+    global bullet_state
+    bullet_state = "fire"
+    screen.blit(bulletImg, (x + 16, y + 10))
 
 # Loop de la aplicación
 running = True
@@ -48,6 +60,8 @@ while running:
                 playerX_change = -4
             if event.key == pygame.K_RIGHT: 
                 playerX_change = 4
+            if event.key == pygame.K_SPACE: 
+                fire_bullet(playerX,bulletY)
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_change = 0
